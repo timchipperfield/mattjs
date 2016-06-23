@@ -12,10 +12,12 @@ describe('Matt', function() {
   });
 
   it('returns a phrase', function() {
-    expect(matt.select()).toEqual('Modesty is for fucking idiots')
+    spyOn( matt, '_random').and.returnValue('Modesty is for fucking idiots');
+    expect(matt.selector()).toEqual('Modesty is for fucking idiots')
   });
 
   it('returns a different phrase each time', function() {
-    expect(matt.select()).toEqual('My life is just quotable');
+    spyOn( matt, '_random').and.returnValue('My life is just quotable');
+    expect(matt.selector()).toEqual('My life is just quotable');
   });
 });
