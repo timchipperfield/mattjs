@@ -20,4 +20,8 @@ describe('Matt', function() {
     spyOn( matt, '_random').and.returnValue('My life is just quotable');
     expect(matt.selector()).toEqual('My life is just quotable');
   });
+
+  it('declares our love', function() {
+    expect(matt.love()).toEqual('<3');
+  });
 });
